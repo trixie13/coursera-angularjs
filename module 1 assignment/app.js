@@ -30,30 +30,27 @@
 			var stringsArray = string.split(',');
 			return stringsArray;
 		}
-
+        
+        //calulates number of items in the list
+        //checking for invalid input
 		var calculateNumber = function(stringsArray) {
 			var sum = 0;
 			for(var i = 0; i < stringsArray.length; i++){
-				if(isValidInput(stringsArray[i] == true){
+				if(isValidInput(stringsArray[i]) == true){
 					sum++;
 				};
 			};
 			$scope.numberOfItems = sum;
 		}
-        //checkes for empty string ""
-        //and spaces string "   "
-		var isValidInput = function (string) {
-			if(string == "") return false;
-
-			var stringValue = 0;
-			var space = " ";
-			for(var i = 0; i < string.length; i++) {
-				stringValue += string.charCodeAt(i);
-			}
-			if(stringValue == space.charCode*string.length)
-				return false;
-
-			return true;
+        
+        // checkes for empty string ""
+        // and spaces string "   "
+		var isValidInput = function (input) {
+		    if (/\S/.test(input)) {
+		    	// string is not empty and not just whitespace
+			    return true;
+		    };
+			return false;
 		};
 	};
 
