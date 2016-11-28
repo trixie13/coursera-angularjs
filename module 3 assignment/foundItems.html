@@ -1,0 +1,12 @@
+<ol>
+	<li ng-repeat="item in narrow.found">
+		<h4> {{ item.name }} ( {{ item.short_name }} ) </h4>
+		<p> {{ item.description }} </p> 
+		<button ng-click="narrow.onRemove({index: $index});"
+		        class="btn btn-warning btn-xs">
+		    Don't want this one!
+		</button>
+		<hr>
+	</li>
+</ol>
+
