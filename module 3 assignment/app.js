@@ -43,6 +43,7 @@
 		            	narrow.message = "Nothing found!";
 		            } else {
 		            	narrow.message = "";
+				    narrow.found = [];
 		            }
 			    }) //end promise.then
 			   .catch(function (error) {
