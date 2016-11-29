@@ -33,8 +33,8 @@
 
 			if (searchTerm != "") {
 
-				var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-                console.log(promise);
+	                    var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+                
 			   
 			    promise
 			    .then(function (foundItems) {
@@ -58,6 +58,8 @@
 
 		narrow.removeItem = function (itemIndex) {
 			narrow.found.splice(itemIndex,1);
+			if(narrow.found.length == 0)
+				narrow.message = "Nothing else!";
 		};
 
 	} //end NarrowItDownController
